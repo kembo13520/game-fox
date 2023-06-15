@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: yarn build
+        run: echo "Key is $VITE_API_KEY" && yarn build
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
       - name: Setup Pages
@@ -48,6 +48,8 @@ jobs:
         with:
           # Upload dist repository
           path: "./dist"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+       - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.VITE_API_KEY }}
+          publish_dir: ./dist
