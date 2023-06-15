@@ -14,7 +14,7 @@ export const searchRepositories = async (
         page: pagination.page,
       },
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_PERSONAL_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
       },
     }
   );
