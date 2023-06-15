@@ -1,3 +1,4 @@
+# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -27,15 +28,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-       - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
       - name: Install dependencies
-        run: yarn
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Setup env
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
@@ -43,8 +46,6 @@ jobs:
           touch .env
           echo VITE_API_KEY=$VITE_API_KEY >> .env
           echo "Key is $VITE_API_KEY"
-      - name: build
-        run: yarn build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
