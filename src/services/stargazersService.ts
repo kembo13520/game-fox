@@ -14,7 +14,7 @@ export const stargazersQuery = async (
         page: pagination.page,
       },
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${import.meta.env.VITE_PERSONAL_ACCESS_TOKEN}`,
       },
     }
   );

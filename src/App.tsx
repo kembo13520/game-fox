@@ -4,7 +4,7 @@ import { SearchBox } from "./components/SearchBox/SearchBox";
 
 function App() {
   useEffect(() => {
-    console.log("App mounted");
+    console.log("App mounteddddddd");
   }, []);
   return <SearchBox />;
 }
