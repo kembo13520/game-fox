@@ -4,7 +4,7 @@ import { SearchBox } from "./components/SearchBox/SearchBox";
 
 function App() {
   useEffect(() => {
-    console.log("App");
+    console.log("App", import.meta.env.VITE_API_KEY);
   }, []);
   return <SearchBox />;
 }
