@@ -33,12 +33,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'yarn'
+          cache: 'npm'
       - name: Install dependencies
         run: yarn
-      - name: setup env
+      - name: Setup env
         env:
-          VITE_API_KEY: ${{secrets.VITE_API_KEY}}
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
         run: |
           touch .env
           echo VITE_API_KEY=$VITE_API_KEY >> .env
