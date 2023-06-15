@@ -14,7 +14,7 @@ export const searchRepositories = async (
         page: pagination.page,
       },
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
       },
     }
   );
